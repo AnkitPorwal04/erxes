@@ -71,7 +71,7 @@ export const firstDonateColumns: ColumnDef<IDonate>[] = [
     accessorKey: 'createdAt',
     header: () => {
       const { t } = useTranslation('loyalty');
-      return <RecordTable.InlineHead icon={IconClock} label={t('created-at')} />;
+      return <RecordTable.InlineHead icon={IconClock} label={t('created-at', 'Created At')} />;
     },
     size: 100,
     cell: ({ row }) => <CreatedAtCell donate={row.original} />,
@@ -81,7 +81,7 @@ export const firstDonateColumns: ColumnDef<IDonate>[] = [
     accessorKey: 'ownerType',
     header: () => {
       const { t } = useTranslation('loyalty');
-      return <RecordTable.InlineHead icon={IconUser} label={t('owner-type')} />;
+      return <RecordTable.InlineHead icon={IconUser} label={t('owner-type', 'Owner Type')} />;
     },
     cell: ({ cell }) => {
       const { t } = useTranslation('loyalty');
@@ -101,7 +101,7 @@ export const secondDonateColumns: ColumnDef<IDonate>[] = [
     accessorKey: 'ownerId',
     header: () => {
       const { t } = useTranslation('loyalty');
-      return <RecordTable.InlineHead icon={IconUser} label={t('owner')} />;
+      return <RecordTable.InlineHead icon={IconUser} label={t('owner', 'Owner')} />;
     },
     cell: ({ row }) => (
       <OwnerCell
@@ -115,7 +115,7 @@ export const secondDonateColumns: ColumnDef<IDonate>[] = [
     accessorKey: 'status',
     header: () => {
       const { t } = useTranslation('loyalty');
-      return <RecordTable.InlineHead icon={IconTag} label={t('status')} />;
+      return <RecordTable.InlineHead icon={IconTag} label={t('status', 'Status')} />;
     },
     cell: ({ cell }) => {
       const { t } = useTranslation('loyalty');

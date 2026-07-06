@@ -78,14 +78,14 @@ export const scoreLogColumns: ColumnDef<IScoreLog>[] = [
   makeScoreMoreColumn(),
   {
     id: 'ownerName',
-    header: () => { /* eslint-disable-next-line react-hooks/rules-of-hooks */ const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconUser} label={t('owner-name')} />; },
+    header: () => { /* eslint-disable-next-line react-hooks/rules-of-hooks */ const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconUser} label={t('owner-name', 'Owner Name')} />; },
     size: 180,
     cell: ({ row }) => <ScoreOwnerNameCell row={row} />,
   },
   {
     id: 'ownerType',
     accessorKey: 'ownerType',
-    header: () => { /* eslint-disable-next-line react-hooks/rules-of-hooks */ const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconLabelFilled} label={t('owner-type')} />; },
+    header: () => { /* eslint-disable-next-line react-hooks/rules-of-hooks */ const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconLabelFilled} label={t('owner-type', 'Owner Type')} />; },
     size: 120,
     cell: ({ cell }) => (
       <RecordTableInlineCell className="capitalize text-xs">
@@ -96,7 +96,7 @@ export const scoreLogColumns: ColumnDef<IScoreLog>[] = [
   {
     id: 'totalScore',
     accessorKey: 'totalScore',
-    header: () => { /* eslint-disable-next-line react-hooks/rules-of-hooks */ const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconStar} label={t('total-score')} />; },
+    header: () => { /* eslint-disable-next-line react-hooks/rules-of-hooks */ const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconStar} label={t('total-score', 'Total Score')} />; },
     size: 140,
     cell: ({ cell }) => (
       <RecordTableInlineCell className="font-semibold">
@@ -107,7 +107,7 @@ export const scoreLogColumns: ColumnDef<IScoreLog>[] = [
   {
     id: 'createdAt',
     accessorKey: 'createdAt',
-    header: () => { /* eslint-disable-next-line react-hooks/rules-of-hooks */ const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconCalendar} label={t('date')} />; },
+    header: () => { /* eslint-disable-next-line react-hooks/rules-of-hooks */ const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconCalendar} label={t('date', 'Date')} />; },
     size: 120,
     cell: ({ cell }) => (
       <RecordTableInlineCell>
@@ -118,7 +118,7 @@ export const scoreLogColumns: ColumnDef<IScoreLog>[] = [
   {
     id: 'dealNumber',
     accessorFn: (row) => row.target?.number,
-    header: () => { /* eslint-disable-next-line react-hooks/rules-of-hooks */ const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconHash} label={t('deal-number')} />; },
+    header: () => { /* eslint-disable-next-line react-hooks/rules-of-hooks */ const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconHash} label={t('deal-number', 'Deal Number')} />; },
     size: 200,
     cell: ({ cell }) => (
       <RecordTableInlineCell>
@@ -129,7 +129,7 @@ export const scoreLogColumns: ColumnDef<IScoreLog>[] = [
   {
     id: 'action',
     accessorKey: 'action',
-    header: () => { /* eslint-disable-next-line react-hooks/rules-of-hooks */ const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconTag} label={t('type')} />; },
+    header: () => { /* eslint-disable-next-line react-hooks/rules-of-hooks */ const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconTag} label={t('type', 'Type')} />; },
     size: 90,
     cell: ({ cell }) => {
       const action = cell.getValue() as string | undefined;
@@ -153,7 +153,7 @@ export const scoreLogColumns: ColumnDef<IScoreLog>[] = [
   {
     id: 'pointsEarned',
     accessorFn: (row) => (row.action === 'add' ? row.change : undefined),
-    header: () => { /* eslint-disable-next-line react-hooks/rules-of-hooks */ const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconCoins} label={t('points-earned')} />; },
+    header: () => { /* eslint-disable-next-line react-hooks/rules-of-hooks */ const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconCoins} label={t('points-earned', 'Points Earned')} />; },
     size: 130,
     cell: ({ cell }) => {
       const val = cell.getValue() as number | undefined;
@@ -167,7 +167,7 @@ export const scoreLogColumns: ColumnDef<IScoreLog>[] = [
   {
     id: 'pointsSpent',
     accessorFn: (row) => (row.action === 'subtract' ? row.change : undefined),
-    header: () => { /* eslint-disable-next-line react-hooks/rules-of-hooks */ const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconChartBar} label={t('points-spent')} />; },
+    header: () => { /* eslint-disable-next-line react-hooks/rules-of-hooks */ const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconChartBar} label={t('points-spent', 'Points Spent')} />; },
     size: 130,
     cell: ({ cell }) => {
       const val = cell.getValue() as number | undefined;
@@ -181,7 +181,7 @@ export const scoreLogColumns: ColumnDef<IScoreLog>[] = [
   {
     id: 'pointsRefunded',
     accessorFn: (row) => (row.action === 'refund' ? row.change : undefined),
-    header: () => { /* eslint-disable-next-line react-hooks/rules-of-hooks */ const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconRefresh} label={t('points-refunded')} />; },
+    header: () => { /* eslint-disable-next-line react-hooks/rules-of-hooks */ const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconRefresh} label={t('points-refunded', 'Points Refunded')} />; },
     size: 150,
     cell: ({ cell }) => {
       const val = cell.getValue() as number | undefined;
@@ -195,7 +195,7 @@ export const scoreLogColumns: ColumnDef<IScoreLog>[] = [
   {
     id: 'pointsSet',
     accessorFn: (row) => (row.action === 'set' ? row.change : undefined),
-    header: () => { /* eslint-disable-next-line react-hooks/rules-of-hooks */ const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconCoins} label={t('score-set')} />; },
+    header: () => { /* eslint-disable-next-line react-hooks/rules-of-hooks */ const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconCoins} label={t('score-set', 'Score Set')} />; },
     size: 120,
     cell: ({ cell }) => {
       const val = cell.getValue() as number | undefined;
@@ -209,7 +209,7 @@ export const scoreLogColumns: ColumnDef<IScoreLog>[] = [
   {
     id: 'campaign',
     accessorFn: (row) => row.campaign?.title,
-    header: () => { /* eslint-disable-next-line react-hooks/rules-of-hooks */ const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconTrophy} label={t('campaign')} />; },
+    header: () => { /* eslint-disable-next-line react-hooks/rules-of-hooks */ const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconTrophy} label={t('campaign', 'Campaign')} />; },
     size: 140,
     cell: ({ cell }) => (
       <RecordTableInlineCell>
@@ -220,7 +220,7 @@ export const scoreLogColumns: ColumnDef<IScoreLog>[] = [
   {
     id: 'description',
     accessorKey: 'description',
-    header: () => { /* eslint-disable-next-line react-hooks/rules-of-hooks */ const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconNote} label={t('description')} />; },
+    header: () => { /* eslint-disable-next-line react-hooks/rules-of-hooks */ const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconNote} label={t('description', 'Description')} />; },
     size: 160,
     cell: ({ cell }) => (
       <RecordTableInlineCell>

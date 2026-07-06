@@ -25,7 +25,7 @@ export const pricingColumns: ColumnDef<IPricing>[] = [
     accessorKey: 'name',
     header: () => {
       const { t } = useTranslation('loyalty');
-      return <RecordTable.InlineHead label={t('name')} icon={IconAlignLeft} />;
+      return <RecordTable.InlineHead label={t('name', 'Name')} icon={IconAlignLeft} />;
     },
     cell: ({ cell, row }) => {
       const pricingId = row.original._id;
@@ -47,7 +47,7 @@ export const pricingColumns: ColumnDef<IPricing>[] = [
     accessorKey: 'status',
     header: () => {
       const { t } = useTranslation('loyalty');
-      return <RecordTable.InlineHead label={t('status')} icon={IconHash} />;
+      return <RecordTable.InlineHead label={t('status', 'Status')} icon={IconHash} />;
     },
     cell: ({ cell }) => {
       const status = cell.getValue() as string;
@@ -69,7 +69,7 @@ export const pricingColumns: ColumnDef<IPricing>[] = [
     accessorKey: 'isPriority',
     header: () => {
       const { t } = useTranslation('loyalty');
-      return <RecordTable.InlineHead label={t('is-priority')} icon={IconTag} />;
+      return <RecordTable.InlineHead label={t('is-priority', 'Is Priority')} icon={IconTag} />;
     },
     cell: ({ cell }) => {
       const value = cell.getValue() as boolean;
@@ -85,7 +85,7 @@ export const pricingColumns: ColumnDef<IPricing>[] = [
     accessorKey: 'applyType',
     header: () => {
       const { t } = useTranslation('loyalty');
-      return <RecordTable.InlineHead label={t('apply-type')} icon={IconTag} />;
+      return <RecordTable.InlineHead label={t('apply-type', 'Apply Type')} icon={IconTag} />;
     },
     cell: ({ cell }) => {
       return (
@@ -102,7 +102,7 @@ export const pricingColumns: ColumnDef<IPricing>[] = [
     accessorKey: 'createdBy',
     header: () => {
       const { t } = useTranslation('loyalty');
-      return <RecordTable.InlineHead label={t('created-by')} icon={IconUser} />;
+      return <RecordTable.InlineHead label={t('created-by', 'Created By')} icon={IconUser} />;
     },
     cell: ({ cell }) => {
       const createdById = cell.getValue() as string;
@@ -122,7 +122,7 @@ export const pricingColumns: ColumnDef<IPricing>[] = [
     accessorKey: 'createdAt',
     header: () => {
       const { t } = useTranslation('loyalty');
-      return <RecordTable.InlineHead label={t('date-created')} icon={IconCalendarPlus} />;
+      return <RecordTable.InlineHead label={t('date-created', 'Date Created')} icon={IconCalendarPlus} />;
     },
     cell: ({ cell }) => {
       return (
@@ -139,7 +139,7 @@ export const pricingColumns: ColumnDef<IPricing>[] = [
     accessorKey: 'updatedAt',
     header: () => {
       const { t } = useTranslation('loyalty');
-      return <RecordTable.InlineHead label={t('last-updated-at')} icon={IconCalendarPlus} />;
+      return <RecordTable.InlineHead label={t('last-updated-at', 'Last Updated At')} icon={IconCalendarPlus} />;
     },
     cell: ({ cell }) => {
       return (

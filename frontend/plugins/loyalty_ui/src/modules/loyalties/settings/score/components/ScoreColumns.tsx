@@ -25,7 +25,7 @@ export const scoreColumns: (
   {
     id: 'title',
     accessorKey: 'title',
-    header: () => { const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconTag} label={t('title')} />; },
+    header: () => { const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconTag} label={t('title', 'Title')} />; },
     cell: ({ cell }: { cell: any }) => {
       return (
         <ScoreNameCell
@@ -39,7 +39,7 @@ export const scoreColumns: (
   {
     id: 'order',
     accessorKey: 'order',
-    header: () => { const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconListNumbers} label={t('order')} />; },
+    header: () => { const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconListNumbers} label={t('order', 'Order')} />; },
     cell: ({ cell }: { cell: any }) => {
       return (
         <RecordTableInlineCell>
@@ -52,7 +52,7 @@ export const scoreColumns: (
   {
     id: 'ownerType',
     accessorKey: 'ownerType',
-    header: () => { const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconLabelFilled} label={t('owner-type')} />; },
+    header: () => { const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconLabelFilled} label={t('owner-type', 'Owner Type')} />; },
     cell: ({ cell }: { cell: any }) => {
       return (
         <RecordTableInlineCell>
@@ -65,7 +65,7 @@ export const scoreColumns: (
   {
     id: 'status',
     accessorKey: 'status',
-    header: () => { const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconToggleLeft} label={t('status')} />; },
+    header: () => { const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconToggleLeft} label={t('status', 'Status')} />; },
     cell: ({ cell }) => {
       const { _id } = cell.row.original || {};
       const currentStatus = cell.getValue() as string;

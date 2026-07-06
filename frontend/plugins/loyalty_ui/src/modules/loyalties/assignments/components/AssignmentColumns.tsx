@@ -46,7 +46,7 @@ export const assignmentColumns: ColumnDef<IAssignmentItem>[] = [
     accessorKey: 'campaign',
     header: () => {
       const { t } = useTranslation('loyalty');
-      return <RecordTable.InlineHead icon={IconTag} label={t('campaign')} />;
+      return <RecordTable.InlineHead icon={IconTag} label={t('campaign', 'Campaign')} />;
     },
     size: 180,
     cell: ({ row }) => (
@@ -60,7 +60,7 @@ export const assignmentColumns: ColumnDef<IAssignmentItem>[] = [
     accessorKey: 'ownerId',
     header: () => {
       const { t } = useTranslation('loyalty');
-      return <RecordTable.InlineHead icon={IconUser} label={t('owner-id')} />;
+      return <RecordTable.InlineHead icon={IconUser} label={t('owner-id', 'Owner Id')} />;
     },
     size: 180,
     cell: ({ row }) => (
@@ -74,7 +74,7 @@ export const assignmentColumns: ColumnDef<IAssignmentItem>[] = [
     accessorKey: 'status',
     header: () => {
       const { t } = useTranslation('loyalty');
-      return <RecordTable.InlineHead icon={IconToggleLeft} label={t('status')} />;
+      return <RecordTable.InlineHead icon={IconToggleLeft} label={t('status', 'Status')} />;
     },
     size: 100,
     cell: ({ cell }) => {
@@ -93,7 +93,7 @@ export const assignmentColumns: ColumnDef<IAssignmentItem>[] = [
     accessorKey: 'createdAt',
     header: () => {
       const { t } = useTranslation('loyalty');
-      return <RecordTable.InlineHead icon={IconCalendar} label={t('created-at')} />;
+      return <RecordTable.InlineHead icon={IconCalendar} label={t('created-at', 'Created At')} />;
     },
     size: 150,
     cell: ({ cell }) => (

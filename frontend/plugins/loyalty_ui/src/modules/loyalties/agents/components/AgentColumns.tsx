@@ -37,7 +37,7 @@ const ProductRulesCell = ({ agent }: { agent: IAgent }) => {
   return (
     <RecordTableInlineCell>
       <span className="text-xs text-muted-foreground">
-        {t('rules-count', { count: rules.length })}
+        {t('rules-count', '{{count}} rule(s)', { count: rules.length })}
       </span>
     </RecordTableInlineCell>
   );
@@ -49,14 +49,14 @@ export const agentColumns: ColumnDef<IAgent>[] = [
   {
     id: 'number',
     accessorKey: 'number',
-    header: () => { const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconTag} label={t('number')} />; },
+    header: () => { const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconTag} label={t('number', 'Number')} />; },
     size: 150,
     cell: ({ row }) => <NumberCell agent={row.original} />,
   },
   {
     id: 'status',
     accessorKey: 'status',
-    header: () => { const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconTag} label={t('status')} />; },
+    header: () => { const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconTag} label={t('status', 'Status')} />; },
     size: 100,
     cell: ({ cell }) => {
       const { t } = useTranslation('loyalty');
@@ -70,7 +70,7 @@ export const agentColumns: ColumnDef<IAgent>[] = [
   {
     id: 'hasReturn',
     accessorKey: 'hasReturn',
-    header: () => { const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconRefresh} label={t('has-return')} />; },
+    header: () => { const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconRefresh} label={t('has-return', 'Has Return')} />; },
     size: 100,
     cell: ({ cell }) => (
       <RecordTableInlineCell>
@@ -90,7 +90,7 @@ export const agentColumns: ColumnDef<IAgent>[] = [
   {
     id: 'productRules',
     accessorKey: 'rulesOfProducts',
-    header: () => { const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconBox} label={t('product-rules')} />; },
+    header: () => { const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconBox} label={t('product-rules', 'Product Rules')} />; },
     cell: ({ row }) => <ProductRulesCell agent={row.original} />,
   },
 ];

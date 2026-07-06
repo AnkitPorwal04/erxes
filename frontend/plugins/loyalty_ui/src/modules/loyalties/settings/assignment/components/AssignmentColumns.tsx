@@ -48,7 +48,7 @@ export const assignmentColumns: (
     accessorKey: 'title',
     header: () => {
       const { t } = useTranslation('loyalty');
-      return <RecordTable.InlineHead icon={IconTag} label={t('title')} />;
+      return <RecordTable.InlineHead icon={IconTag} label={t('title', 'Title')} />;
     },
     cell: ({ cell }: { cell: any }) => {
       return (
@@ -65,7 +65,7 @@ export const assignmentColumns: (
     accessorKey: 'startDate',
     header: () => {
       const { t } = useTranslation('loyalty');
-      return <RecordTable.InlineHead icon={IconCalendar} label={t('start-date')} />;
+      return <RecordTable.InlineHead icon={IconCalendar} label={t('start-date', 'Start Date')} />;
     },
     cell: ({ cell }: { cell: any }) => {
       return (
@@ -81,7 +81,7 @@ export const assignmentColumns: (
     accessorKey: 'endDate',
     header: () => {
       const { t } = useTranslation('loyalty');
-      return <RecordTable.InlineHead icon={IconCalendarEvent} label={t('end-date')} />;
+      return <RecordTable.InlineHead icon={IconCalendarEvent} label={t('end-date', 'End Date')} />;
     },
     cell: ({ cell }: { cell: any }) => {
       return (
@@ -97,7 +97,7 @@ export const assignmentColumns: (
     accessorKey: 'status',
     header: () => {
       const { t } = useTranslation('loyalty');
-      return <RecordTable.InlineHead label={t('status')} icon={IconHash} />;
+      return <RecordTable.InlineHead label={t('status', 'Status')} icon={IconHash} />;
     },
     cell: ({ cell }) => {
       const status = cell.getValue() as string;

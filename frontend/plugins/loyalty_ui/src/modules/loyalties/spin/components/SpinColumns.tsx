@@ -69,7 +69,7 @@ export const firstSpinColumns: ColumnDef<ISpin>[] = [
     accessorKey: 'createdAt',
     header: () => {
       const { t } = useTranslation('loyalty');
-      return <RecordTable.InlineHead icon={IconClock} label={t('created-at')} />;
+      return <RecordTable.InlineHead icon={IconClock} label={t('created-at', 'Created At')} />;
     },
     size: 100,
     cell: ({ row }) => <CreatedAtCell spin={row.original} />,
@@ -79,7 +79,7 @@ export const firstSpinColumns: ColumnDef<ISpin>[] = [
     accessorKey: 'ownerType',
     header: () => {
       const { t } = useTranslation('loyalty');
-      return <RecordTable.InlineHead icon={IconUser} label={t('owner-type')} />;
+      return <RecordTable.InlineHead icon={IconUser} label={t('owner-type', 'Owner Type')} />;
     },
     cell: ({ cell }) => {
       const { t } = useTranslation('loyalty');
@@ -99,7 +99,7 @@ export const secondSpinColumns: ColumnDef<ISpin>[] = [
     accessorKey: 'ownerId',
     header: () => {
       const { t } = useTranslation('loyalty');
-      return <RecordTable.InlineHead icon={IconUser} label={t('owner')} />;
+      return <RecordTable.InlineHead icon={IconUser} label={t('owner', 'Owner')} />;
     },
     cell: ({ row }) => (
       <OwnerCell
@@ -113,7 +113,7 @@ export const secondSpinColumns: ColumnDef<ISpin>[] = [
     accessorKey: 'status',
     header: () => {
       const { t } = useTranslation('loyalty');
-      return <RecordTable.InlineHead icon={IconTag} label={t('status')} />;
+      return <RecordTable.InlineHead icon={IconTag} label={t('status', 'Status')} />;
     },
     cell: ({ cell }) => {
       const { t } = useTranslation('loyalty');

@@ -44,7 +44,7 @@ export const spinColumns: ColumnDef<ISpin>[] = [
   {
     id: 'title',
     accessorKey: 'title',
-    header: () => { const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconTag} label={t('title')} />; },
+    header: () => { const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconTag} label={t('title', 'Title')} />; },
     cell: ({ cell }) => {
       return (
         <SpinNameCell
@@ -58,7 +58,7 @@ export const spinColumns: ColumnDef<ISpin>[] = [
   {
     id: 'startDate',
     accessorKey: 'startDate',
-    header: () => { const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconCalendar} label={t('start-date')} />; },
+    header: () => { const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconCalendar} label={t('start-date', 'Start Date')} />; },
     cell: ({ cell }) => {
       return (
         <RecordTableInlineCell className="text-xs font-medium text-muted-foreground">
@@ -71,7 +71,7 @@ export const spinColumns: ColumnDef<ISpin>[] = [
   {
     id: 'endDate',
     accessorKey: 'endDate',
-    header: () => { const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconCalendarEvent} label={t('end-date')} />; },
+    header: () => { const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconCalendarEvent} label={t('end-date', 'End Date')} />; },
     cell: ({ cell }) => {
       return (
         <RecordTableInlineCell className="text-xs font-medium text-muted-foreground">
@@ -84,7 +84,7 @@ export const spinColumns: ColumnDef<ISpin>[] = [
   {
     id: 'status',
     accessorKey: 'status',
-    header: () => { const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead label={t('status')} icon={IconHash} />; },
+    header: () => { const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead label={t('status', 'Status')} icon={IconHash} />; },
     cell: ({ cell }) => {
       const status = cell.getValue() as string;
       return (

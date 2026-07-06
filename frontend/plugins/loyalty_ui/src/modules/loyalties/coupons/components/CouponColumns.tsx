@@ -24,7 +24,7 @@ const CodeCell = ({ code }: { code?: string }) => {
   const handleCopy = () => {
     if (!code) return;
     navigator.clipboard.writeText(code);
-    toast({ title: t('copied'), description: code, variant: 'default' });
+    toast({ title: t('copied', 'Copied!'), description: code, variant: 'default' });
   };
 
   return (
@@ -68,7 +68,7 @@ export const couponColumns: ColumnDef<ICoupon>[] = [
     accessorKey: 'campaign',
     header: () => {
       const { t } = useTranslation('loyalty');
-      return <RecordTable.InlineHead icon={IconTag} label={t('campaign')} />;
+      return <RecordTable.InlineHead icon={IconTag} label={t('campaign', 'Campaign')} />;
     },
     size: 160,
     cell: ({ row }) => (
@@ -82,7 +82,7 @@ export const couponColumns: ColumnDef<ICoupon>[] = [
     accessorKey: 'code',
     header: () => {
       const { t } = useTranslation('loyalty');
-      return <RecordTable.InlineHead icon={IconHash} label={t('code')} />;
+      return <RecordTable.InlineHead icon={IconHash} label={t('code', 'Code')} />;
     },
     size: 140,
     cell: ({ row }) => <CodeCell code={row.original.code} />,
@@ -92,7 +92,7 @@ export const couponColumns: ColumnDef<ICoupon>[] = [
     accessorKey: 'usageCount',
     header: () => {
       const { t } = useTranslation('loyalty');
-      return <RecordTable.InlineHead icon={IconChartBar} label={t('usage')} />;
+      return <RecordTable.InlineHead icon={IconChartBar} label={t('usage', 'Usage')} />;
     },
     size: 90,
     cell: ({ cell }) => (
@@ -106,7 +106,7 @@ export const couponColumns: ColumnDef<ICoupon>[] = [
     accessorKey: 'usageLimit',
     header: () => {
       const { t } = useTranslation('loyalty');
-      return <RecordTable.InlineHead icon={IconLock} label={t('limit')} />;
+      return <RecordTable.InlineHead icon={IconLock} label={t('limit', 'Limit')} />;
     },
     size: 90,
     cell: ({ cell }) => (
@@ -120,7 +120,7 @@ export const couponColumns: ColumnDef<ICoupon>[] = [
     accessorKey: 'status',
     header: () => {
       const { t } = useTranslation('loyalty');
-      return <RecordTable.InlineHead icon={IconToggleLeft} label={t('status')} />;
+      return <RecordTable.InlineHead icon={IconToggleLeft} label={t('status', 'Status')} />;
     },
     size: 100,
     cell: ({ cell }) => {
@@ -139,7 +139,7 @@ export const couponColumns: ColumnDef<ICoupon>[] = [
     accessorKey: 'createdAt',
     header: () => {
       const { t } = useTranslation('loyalty');
-      return <RecordTable.InlineHead icon={IconCalendar} label={t('created-at')} />;
+      return <RecordTable.InlineHead icon={IconCalendar} label={t('created-at', 'Created At')} />;
     },
     size: 150,
     cell: ({ cell }) => (

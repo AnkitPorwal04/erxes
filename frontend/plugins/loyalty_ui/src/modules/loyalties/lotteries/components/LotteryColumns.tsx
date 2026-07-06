@@ -83,7 +83,7 @@ export const firstLotteryColumns: ColumnDef<ILottery>[] = [
     accessorKey: 'number',
     header: () => {
       const { t } = useTranslation('loyalty');
-      return <RecordTable.InlineHead icon={IconHash} label={t('number')} />;
+      return <RecordTable.InlineHead icon={IconHash} label={t('number', 'Number')} />;
     },
     cell: ({ row }) => <NumberCell lottery={row.original} />,
     size: 300,
@@ -93,7 +93,7 @@ export const firstLotteryColumns: ColumnDef<ILottery>[] = [
     accessorKey: 'createdAt',
     header: () => {
       const { t } = useTranslation('loyalty');
-      return <RecordTable.InlineHead icon={IconClock} label={t('created-at')} />;
+      return <RecordTable.InlineHead icon={IconClock} label={t('created-at', 'Created At')} />;
     },
     size: 100,
     cell: ({ row }) => <CreatedAtCell lottery={row.original} />,
@@ -103,7 +103,7 @@ export const firstLotteryColumns: ColumnDef<ILottery>[] = [
     accessorKey: 'ownerType',
     header: () => {
       const { t } = useTranslation('loyalty');
-      return <RecordTable.InlineHead icon={IconUser} label={t('owner-type')} />;
+      return <RecordTable.InlineHead icon={IconUser} label={t('owner-type', 'Owner Type')} />;
     },
     cell: ({ cell }) => {
       const { t } = useTranslation('loyalty');
@@ -123,7 +123,7 @@ export const secondLotteryColumns: ColumnDef<ILottery>[] = [
     accessorKey: 'ownerId',
     header: () => {
       const { t } = useTranslation('loyalty');
-      return <RecordTable.InlineHead icon={IconUser} label={t('owner')} />;
+      return <RecordTable.InlineHead icon={IconUser} label={t('owner', 'Owner')} />;
     },
     cell: ({ row }) => (
       <OwnerCell
@@ -137,7 +137,7 @@ export const secondLotteryColumns: ColumnDef<ILottery>[] = [
     accessorKey: 'status',
     header: () => {
       const { t } = useTranslation('loyalty');
-      return <RecordTable.InlineHead icon={IconTag} label={t('status')} />;
+      return <RecordTable.InlineHead icon={IconTag} label={t('status', 'Status')} />;
     },
     cell: ({ cell }) => {
       const { t } = useTranslation('loyalty');

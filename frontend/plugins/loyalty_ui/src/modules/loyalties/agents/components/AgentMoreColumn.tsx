@@ -32,12 +32,16 @@ export const AgentMoreColumnCell = ({
 
     confirm({
       options: { confirmationValue },
-      message: t('delete-agent-confirm', { count: 1 }),
+      message: t(
+        'delete-agent-confirm',
+        'Are you sure you want to delete {{count}} agent(s)?',
+        { count: 1 },
+      ),
     }).then(() => {
       deleteAgent(agent._id).catch(() => {
         toast({
-          title: t('error'),
-          description: t('failed-to-delete-agent'),
+          title: t('error', 'Error'),
+          description: t('failed-to-delete-agent', 'Failed to delete agent'),
           variant: 'destructive',
         });
       });
@@ -58,7 +62,7 @@ export const AgentMoreColumnCell = ({
           <Command>
             <Command.List>
               <Command.Item value="edit" onSelect={() => setEditOpen(true)}>
-                <IconEdit /> {t('edit')}
+                <IconEdit /> {t('edit', 'Edit')}
               </Command.Item>
               <Command.Item asChild>
                 <Button
@@ -69,7 +73,7 @@ export const AgentMoreColumnCell = ({
                   disabled={loading}
                 >
                   <IconTrash className="size-4" />
-                  {t('delete')}
+                  {t('delete', 'Delete')}
                 </Button>
               </Command.Item>
             </Command.List>

@@ -101,7 +101,7 @@ export const firstVoucherColumns: ColumnDef<IVoucher>[] = [
     accessorKey: 'createdAt',
     header: () => {
       const { t } = useTranslation('loyalty');
-      return <RecordTable.InlineHead icon={IconClock} label={t('created-at')} />;
+      return <RecordTable.InlineHead icon={IconClock} label={t('created-at', 'Created At')} />;
     },
     cell: ({ row }) => <CreatedAtCell voucher={row.original} />,
   },
@@ -110,7 +110,7 @@ export const firstVoucherColumns: ColumnDef<IVoucher>[] = [
     accessorKey: 'ownerType',
     header: () => {
       const { t } = useTranslation('loyalty');
-      return <RecordTable.InlineHead icon={IconUser} label={t('owner-type')} />;
+      return <RecordTable.InlineHead icon={IconUser} label={t('owner-type', 'Owner Type')} />;
     },
     cell: ({ cell }) => {
       const { t } = useTranslation('loyalty');
@@ -130,7 +130,7 @@ export const secondVoucherColumns: ColumnDef<IVoucher>[] = [
     accessorKey: 'ownerId',
     header: () => {
       const { t } = useTranslation('loyalty');
-      return <RecordTable.InlineHead icon={IconUser} label={t('owner')} />;
+      return <RecordTable.InlineHead icon={IconUser} label={t('owner', 'Owner')} />;
     },
     cell: ({ row }) => (
       <OwnerCell
@@ -144,7 +144,7 @@ export const secondVoucherColumns: ColumnDef<IVoucher>[] = [
     accessorKey: 'status',
     header: () => {
       const { t } = useTranslation('loyalty');
-      return <RecordTable.InlineHead icon={IconTag} label={t('status')} />;
+      return <RecordTable.InlineHead icon={IconTag} label={t('status', 'Status')} />;
     },
     cell: ({ cell }) => {
       const { t } = useTranslation('loyalty');

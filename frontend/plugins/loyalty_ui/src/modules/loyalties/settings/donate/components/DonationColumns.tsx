@@ -46,7 +46,7 @@ export const donationColumns: (
   {
     id: 'name',
     accessorKey: 'title',
-    header: () => { const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconTag} label={t('name')} />; },
+    header: () => { const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconTag} label={t('name', 'Name')} />; },
     cell: ({ cell }: { cell: any }) => {
       return (
         <DonationNameCell
@@ -60,7 +60,7 @@ export const donationColumns: (
   {
     id: 'startDate',
     accessorKey: 'startDate',
-    header: () => { const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconCalendar} label={t('start-date')} />; },
+    header: () => { const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconCalendar} label={t('start-date', 'Start Date')} />; },
     cell: ({ cell }: { cell: any }) => {
       return (
         <RecordTableInlineCell className="text-xs font-medium text-muted-foreground">
@@ -73,7 +73,7 @@ export const donationColumns: (
   {
     id: 'endDate',
     accessorKey: 'endDate',
-    header: () => { const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconCalendarEvent} label={t('end-date')} />; },
+    header: () => { const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead icon={IconCalendarEvent} label={t('end-date', 'End Date')} />; },
     cell: ({ cell }: { cell: any }) => {
       return (
         <RecordTableInlineCell className="text-xs font-medium text-muted-foreground">
@@ -86,7 +86,7 @@ export const donationColumns: (
   {
     id: 'status',
     accessorKey: 'status',
-    header: () => { const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead label={t('status')} icon={IconHash} />; },
+    header: () => { const { t } = useTranslation('loyalty'); return <RecordTable.InlineHead label={t('status', 'Status')} icon={IconHash} />; },
     cell: ({ cell }) => {
       const status = cell.getValue() as string;
       return (
