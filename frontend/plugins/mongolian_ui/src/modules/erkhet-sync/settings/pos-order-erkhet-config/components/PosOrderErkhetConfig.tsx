@@ -93,9 +93,9 @@ const ConfigForm = ({
               name="title"
               render={({ field }) => (
                 <Form.Item>
-                  <Form.Label>{t('title')}</Form.Label>
+                  <Form.Label>{t('title', 'Title')}</Form.Label>
                   <Form.Control>
-                    <Input {...field} placeholder={t('title')} />
+                    <Input {...field} placeholder={t('title', 'Title')} />
                   </Form.Control>
                   <Form.Message />
                 </Form.Item>
@@ -106,7 +106,7 @@ const ConfigForm = ({
               name="posId"
               render={({ field }) => (
                 <Form.Item>
-                  <Form.Label>{t('pos')}</Form.Label>
+                  <Form.Label>{t('pos', 'Pos')}</Form.Label>
                   <SelectPos
                     variant="form"
                     value={field.value}
@@ -127,9 +127,9 @@ const ConfigForm = ({
               name="userEmail"
               render={({ field }) => (
                 <Form.Item>
-                  <Form.Label>{t('user-email')}</Form.Label>
+                  <Form.Label>{t('user-email', 'User Email')}</Form.Label>
                   <Form.Control>
-                    <Input {...field} placeholder={t('enter-erkhet-user-email')} />
+                    <Input {...field} placeholder={t('enter-erkhet-user-email', 'Erkhet user email')} />
                   </Form.Control>
                   <Form.Message />
                 </Form.Item>
@@ -140,9 +140,9 @@ const ConfigForm = ({
               name="beginNumber"
               render={({ field }) => (
                 <Form.Item>
-                  <Form.Label>{t('begin-number')}</Form.Label>
+                  <Form.Label>{t('begin-number', 'Begin Number')}</Form.Label>
                   <Form.Control>
-                    <Input {...field} placeholder={t('prefix-for-order-number')} />
+                    <Input {...field} placeholder={t('prefix-for-order-number', 'Prefix for order number')} />
                   </Form.Control>
                   <Form.Message />
                 </Form.Item>
@@ -153,10 +153,10 @@ const ConfigForm = ({
               name="defaultPay"
               render={({ field }) => (
                 <Form.Item>
-                  <Form.Label>{t('default-pay')}</Form.Label>
+                  <Form.Label>{t('default-pay', 'Default Pay')}</Form.Label>
                   <Select value={field.value} onValueChange={field.onChange}>
                     <Select.Trigger className="w-full">
-                      <Select.Value placeholder={t('default-pay')} />
+                      <Select.Value placeholder={t('default-pay', 'Default Pay')} />
                     </Select.Trigger>
                     <Select.Content>
                       {DEFAULT_PAY_DATA.map((item) => (
@@ -184,7 +184,7 @@ const ConfigForm = ({
                       onCheckedChange={field.onChange}
                     />
                   </Form.Control>
-                  <Form.Label className="font-medium">{t('has-vat')}</Form.Label>
+                  <Form.Label className="font-medium">{t('has-vat', 'Has Vat')}</Form.Label>
                 </Form.Item>
               )}
             />
@@ -199,7 +199,7 @@ const ConfigForm = ({
                       onCheckedChange={field.onChange}
                     />
                   </Form.Control>
-                  <Form.Label className="font-medium">{t('has-citytax')}</Form.Label>
+                  <Form.Label className="font-medium">{t('has-citytax', 'Has Citytax')}</Form.Label>
                 </Form.Item>
               )}
             />
@@ -211,9 +211,9 @@ const ConfigForm = ({
               name="reverseVatRules"
               render={({ field }) => (
                 <Form.Item>
-                  <Form.Label>{t('reverse-vat-rule-ids')}</Form.Label>
+                  <Form.Label>{t('reverse-vat-rule-ids', 'Reverse VAT Rule IDs')}</Form.Label>
                   <Form.Control>
-                    <Input {...field} placeholder={t('comma-separated-rule-ids')} />
+                    <Input {...field} placeholder={t('comma-separated-rule-ids', 'Comma separated rule ids')} />
                   </Form.Control>
                 </Form.Item>
               )}
@@ -223,9 +223,9 @@ const ConfigForm = ({
               name="reverseCtaxRules"
               render={({ field }) => (
                 <Form.Item>
-                  <Form.Label>{t('reverse-citytax-rule-ids')}</Form.Label>
+                  <Form.Label>{t('reverse-citytax-rule-ids', 'Reverse City Tax Rule IDs')}</Form.Label>
                   <Form.Control>
-                    <Input {...field} placeholder={t('comma-separated-rule-ids')} />
+                    <Input {...field} placeholder={t('comma-separated-rule-ids', 'Comma separated rule ids')} />
                   </Form.Control>
                 </Form.Item>
               )}
@@ -249,7 +249,7 @@ const ConfigForm = ({
                         onValueChange={field.onChange}
                       >
                         <Select.Trigger className="w-full">
-                          <Select.Value placeholder={t('erkhet-payment-type')} />
+                          <Select.Value placeholder={t('erkhet-payment-type', 'Erkhet payment type')} />
                         </Select.Trigger>
                         <Select.Content>
                           {DEFAULT_PAY_DATA.map((item) => (
@@ -295,12 +295,12 @@ export const PosOrderErkhetConfigAddSheet = ({
       <Sheet.Trigger asChild>
         <Button>
           <IconPlus />
-          {t('new-config')}
+          {t('new-config', 'New Config')}
         </Button>
       </Sheet.Trigger>
       <Sheet.View className="sm:max-w-4xl">
         <Sheet.Header>
-          <Sheet.Title>{t('new-pos-order-erkhet-config')}</Sheet.Title>
+          <Sheet.Title>{t('new-pos-order-erkhet-config', 'New POS Order Erkhet Config')}</Sheet.Title>
           <Sheet.Close />
         </Sheet.Header>
         <Sheet.Content className="flex flex-col overflow-hidden p-0">
@@ -313,7 +313,7 @@ export const PosOrderErkhetConfigAddSheet = ({
         </Sheet.Content>
         <Sheet.Footer>
           <Button type="submit" form={formId} disabled={loading}>
-            {loading ? t('saving') : t('save')}
+            {loading ? t('saving', 'Saving...') : t('save', 'Save')}
           </Button>
         </Sheet.Footer>
       </Sheet.View>
@@ -348,7 +348,7 @@ const PosOrderErkhetConfigEditSheet = ({
     <Sheet open={open} onOpenChange={onOpenChange} modal>
       <Sheet.View className="sm:max-w-4xl">
         <Sheet.Header>
-          <Sheet.Title>{t('edit-pos-order-erkhet-config')}</Sheet.Title>
+          <Sheet.Title>{t('edit-pos-order-erkhet-config', 'Edit POS Order Erkhet Config')}</Sheet.Title>
           <Sheet.Close />
         </Sheet.Header>
         <Sheet.Content className="flex flex-col overflow-hidden p-0">
@@ -361,7 +361,7 @@ const PosOrderErkhetConfigEditSheet = ({
         </Sheet.Content>
         <Sheet.Footer>
           <Button type="submit" form={formId} disabled={loading}>
-            {loading ? t('saving') : t('save')}
+            {loading ? t('saving', 'Saving...') : t('save', 'Save')}
           </Button>
         </Sheet.Footer>
       </Sheet.View>
@@ -407,7 +407,7 @@ const buildColumns = ({
     accessorKey: 'title',
     header: () => {
       const { t } = useTranslation('mongolian');
-      return <RecordTable.InlineHead icon={IconHash} label={t('title')} />;
+      return <RecordTable.InlineHead icon={IconHash} label={t('title', 'Title')} />;
     },
     cell: ({ row }) => (
       <ErkhetConfigTitleCell
@@ -431,7 +431,7 @@ const buildColumns = ({
     accessorKey: 'posId',
     header: () => {
       const { t } = useTranslation('mongolian');
-      return <RecordTable.InlineHead icon={IconBuildingStore} label={t('pos')} />;
+      return <RecordTable.InlineHead icon={IconBuildingStore} label={t('pos', 'Pos')} />;
     },
     cell: ({ row }) => (
       <RecordTableInlineCell>
@@ -447,7 +447,7 @@ const buildColumns = ({
     accessorKey: 'userEmail',
     header: () => {
       const { t } = useTranslation('mongolian');
-      return <RecordTable.InlineHead icon={IconAt} label={t('user-email')} />;
+      return <RecordTable.InlineHead icon={IconAt} label={t('user-email', 'User Email')} />;
     },
     cell: ({ cell }) => (
       <RecordTableInlineCell>
@@ -461,7 +461,7 @@ const buildColumns = ({
     accessorKey: 'defaultPay',
     header: () => {
       const { t } = useTranslation('mongolian');
-      return <RecordTable.InlineHead icon={IconHash} label={t('default-pay')} />;
+      return <RecordTable.InlineHead icon={IconHash} label={t('default-pay', 'Default Pay')} />;
     },
     cell: ({ cell }) => (
       <RecordTableInlineCell>
@@ -492,7 +492,7 @@ export const PosOrderErkhetConfigRecordTable = ({
     <ErkhetConfigRecordTable
       configs={configs}
       columns={buildColumns({ editLoading, onDelete, onEdit, poss })}
-      emptyDescription={t('create-first-pos-order-erkhet-config')}
+      emptyDescription={t('create-first-pos-order-erkhet-config', 'Create your first POS order Erkhet config using the button above.')}
       commandBar={
         <ErkhetConfigCommandBar
           onDeleteMany={onDeleteMany}
